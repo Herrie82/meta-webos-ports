@@ -11,6 +11,7 @@ RDEPENDS_${PN} = " \
   pulseaudio-distro-conf \
   pulseaudio-misc \
   pulseaudio-module-switch-on-connect \
+  pulseaudio-module-bluetooth \
   pulseaudio-server \
   \
   alsa-conf \
