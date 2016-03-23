@@ -7,9 +7,9 @@ DEPENDS += "pulseaudio libhybris virtual/android-headers dbus udev"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PV = "6.0.39+gitr${SRCPV}"
-SRCREV = "22b6553cf8d7c89e2ec4ea57a9cf4f8776b70484"
+SRCREV = "5ab42b04b80dfa8e1fb3fdd3acdeaf7ce1409c25"
 
-SRC_URI = "${WEBOS_PORTS_GIT_REPO_COMPLETE}"
+SRC_URI = "git://github.com/mer-hybris/pulseaudio-modules-droid.git"
 S = "${WORKDIR}/git"
 
 EXTRA_OECONF += " \
@@ -20,10 +20,10 @@ EXTRA_OECONF += " \
 inherit webos_ports_fork_repo
 inherit autotools pkgconfig
 
-FILES_${PN} += "${libdir}/pulse-6.0/modules/*.so"
-FILES_${PN}-dev += "${libdir}/pulse-6.0/modules/*.la"
-FILES_${PN}-staticdev += "${libdir}/pulse-6.0/modules/*.a"
-FILES_${PN}-dbg += "${libdir}/pulse-6.0/modules/.debug"
+FILES_${PN} += "${libdir}/pulse-8.0/modules/*.so"
+FILES_${PN}-dev += "${libdir}/pulse-8.0/modules/*.la"
+FILES_${PN}-staticdev += "${libdir}/pulse-8.0/modules/*.a"
+FILES_${PN}-dbg += "${libdir}/pulse-8.0/modules/.debug"
 
 # Add pulse user to audio group so he can access audio dev nodes from Android
 GROUPMEMS_PARAM_${PN} = "-a pulse -g audio"
